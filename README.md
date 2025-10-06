@@ -63,6 +63,15 @@ Links to screenshots for failures
 -  Test report (HTML summary + screenshots folder)
 
 ---
+Scenario           	Language	Status	Notes
+Chat UI Load	            EN  Pass	Widget loaded successfully
+AI Response Common Query	EN	Fail	Hallucination detected
+Script Injection Handling	AR	Fail	Handled incorrectly in test
+Response Time	AR	Pass	< 1s
+			
+
+
+
 
 📊 High-Level Summary
 Suite	Passed	Failed	Skipped	Total Tests	Duration
@@ -77,38 +86,60 @@ Security tests: testSpecialCharactersHandling, testPromptInjectionHandling
 Stability issues: Browser/session crashes (NoSuchSessionException)
 
 
+
+Key Observations From  Report
+
+English Tests: 6 passed, 7 failed
+Arabic Tests: 4 passed, 9 failed
+Failures mostly in:
+AI response validation (hallucinations, formatting, fallback messages)
+Chatbot UI (load, scroll, input clearing)
+Security tests (script injection, special character handling)
+Passes highlight your framework handling:
+Response time
+Input clear after sending
+Rendering messages
+
+
+Automated Test Scripts
+UI behavior validation (chat widget load, input box, multilingual LTR/RTL, scrolling)
+AI/ML response validation with mocked AI data for deterministic tests
+Security & injection handling tests
+test-data.json
+Predefined prompts in English & Arabic
+Expected AI responses for mock-driven testing
+HTML TestNG Report (Evidence)
+Shows all tests executed with Pass/Fail status
+Includes stack traces & screenshots on failure
+Highlights multilingual, UI, AI-response & security test categories
+README.md
+How to run the suite locally or in CI (Maven + TestNG)
+How to configure test language (EN/AR)
+
+
+“Actual GPT responses vary with model updates and context; for consistent regression testing, we used mocked responses for common public-service prompts.”
+
+
+
+
 Project Structure
 
-U-Ask-AI-ML-QA-Automation/
-│
-├── src/
-│   ├── main/
-│   │   └── java/
-│   │       └── utils/
-│   │            ├── ConfigManager.java      # Reads language/config
-│   │            └── TestDataLoader.java     # Loads test-data.json
-│   │
-│   └── test/
-│       └── java/
-│           ├── base/
-│           │    └── BaseTest.java           # Common setup/teardown
-│           ├── tests/
-│           │    ├── EnglishTests.java
-│           │    ├── ArabicTests.java
-│           │    └── SecurityTests.java
-│           └── pages/
-│                └── ChatbotPage.java        # Page Object for chatbot UI
-│
-├── resources/
-│   ├── test-data.json                        # Prompts & expected responses
-│   └── config.properties                     # Browser, URL, language
-│
-├── reports/
-│   ├── TestNG-report.html
-│   └── screenshots/                          # Failed test screenshots
-│
-├── README.md
-└── pom.xml / package.json (depending on Java/Maven or JS/TS setup)
-
-
+UAskChatbotAutomation/
+ ├─ pom.xml
+ ├─ src
+ │   ├─ main
+ │   │   └─ java
+ │   │       ├─ pages/ChatbotPage.java
+ │   │       ├─ utils/ConfigReader.java
+ │   │       └─ utils/GPTResponseValidator.java
+ │   └─ test
+ │       └─ java
+ │           ├─ tests/ChatbotUITests.java
+ │           ├─ tests/ResponseValidationTests.java
+ │           └─ tests/SecurityTests.java
+ ├─ resources
+ │   ├─ config.properties
+ │   └─ test-data.json
+ ├─ testng.xml
+ └─ README.md
 
