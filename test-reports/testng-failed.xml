@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [U-Ask Chatbot Test Suite]" verbose="0">
+  <test thread-count="1" parallel="tests" name="English Language Tests(failed)" verbose="0">
+    <parameter name="language" value="en"/>
+    <classes>
+      <class name="tests.SecurityTests">
+        <methods>
+          <include name="testLongInputHandling"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testScriptInjectionHandling"/>
+          <include name="testSpecialCharactersHandling"/>
+        </methods>
+      </class> <!-- tests.SecurityTests -->
+      <class name="tests.ChatbotUITests">
+        <methods>
+          <include name="testChatInterfaceLoads"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testScrollFunctionality"/>
+        </methods>
+      </class> <!-- tests.ChatbotUITests -->
+      <class name="tests.AIResponseTests">
+        <methods>
+          <include name="testCommonQueriesResponseQuality"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testResponseFormatting"/>
+        </methods>
+      </class> <!-- tests.AIResponseTests -->
+    </classes>
+  </test> <!-- English Language Tests(failed) -->
+  <test thread-count="1" parallel="tests" name="Arabic Language Tests(failed)" verbose="0">
+    <parameter name="language" value="ar"/>
+    <classes>
+      <class name="tests.SecurityTests">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testScriptInjectionHandling"/>
+          <include name="testSpecialCharactersHandling"/>
+          <include name="testPromptInjectionHandling"/>
+        </methods>
+      </class> <!-- tests.SecurityTests -->
+      <class name="tests.ChatbotUITests">
+        <methods>
+          <include name="testChatInterfaceLoads"/>
+          <include name="testInputClearAfterSend"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testScrollFunctionality"/>
+        </methods>
+      </class> <!-- tests.ChatbotUITests -->
+      <class name="tests.AIResponseTests">
+        <methods>
+          <include name="testCommonQueriesResponseQuality"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testFallbackMessages"/>
+          <include name="testResponseFormatting"/>
+        </methods>
+      </class> <!-- tests.AIResponseTests -->
+    </classes>
+  </test> <!-- Arabic Language Tests(failed) -->
+</suite> <!-- Failed suite [U-Ask Chatbot Test Suite] -->

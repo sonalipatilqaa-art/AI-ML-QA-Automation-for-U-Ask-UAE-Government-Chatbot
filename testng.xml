@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="U-Ask Chatbot Test Suite" parallel="tests" thread-count="1">
+    
+    <test name="English Language Tests">
+        <parameter name="language" value="en"/>
+        <classes>
+            <class name="tests.ChatbotUITests"/>
+            <class name="tests.AIResponseTests"/>
+            <class name="tests.SecurityTests"/>
+        </classes>
+    </test>
+    
+    <test name="Arabic Language Tests">
+        <parameter name="language" value="ar"/>
+        <classes>
+            <class name="tests.ChatbotUITests"/>
+            <class name="tests.AIResponseTests"/>
+            <class name="tests.SecurityTests"/>
+        </classes>
+    </test>
+</suite>
