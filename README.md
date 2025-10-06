@@ -45,7 +45,6 @@ Links to screenshots for failures
 ---
 
 ## 📊 **Test Report Summary**
-Your final **test report** should include:
 - ✅ **Total scenarios executed** (e.g., 26)
 - ✅ **Pass/Fail count** (e.g., 10 passed, 16 failed)
 - ✅ **Failure details with screenshots/logs**
@@ -55,20 +54,20 @@ Your final **test report** should include:
 ---
 
 ## 🔑 **Deliverables Checklist**
-- [x] Automated test scripts (organized & reusable – POM, data-driven)
-- [x] `test-data.json` with EN & AR prompts + expected responses
-- [x] `README.md` with:
+-  Automated test scripts (organized & reusable – POM, data-driven)
+- `test-data.json` with EN & AR prompts + expected responses
+- `README.md` with:
   - How to run tests
   - How to configure language
   - Optional screenshots/logs
-- [x] Test report (HTML summary + screenshots folder)
+-  Test report (HTML summary + screenshots folder)
 
 ---
 
 📊 High-Level Summary
 Suite	Passed	Failed	Skipped	Total Tests	Duration
 English Tests	6	      7	       0	   13	   294,094 ms
-Arabic Tests	4     	9	       0	   13	   305,357 ms
+Arabic Tests	4       9	       0	   13	   305,357 ms
 Total	10	   16	      0	      26	         599,451 ms
 👉 Pass Rate: 10/26 → 38.4% (Needs significant improvement)
 👉 Major Failures:
